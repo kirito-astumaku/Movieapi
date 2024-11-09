@@ -2,10 +2,11 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 
 dotenv.config() // Leer las variavbles de entorno del archivo .env
+console.log(process.env.DB_CONNECT_URI)
 
 const connect = async () => {
   try {
-    mongoose.connect(process.env.DB_CONNECT_URL) // Nos conectamos a la base de datos
+    mongoose.connect(process.env.DB_CONNECT_URI) // Nos conectamos a la base de datos
     const { connection } = await mongoose // Traemos la conexión de mongoose
 
     connection.once('open', () => {

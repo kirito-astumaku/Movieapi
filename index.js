@@ -1,20 +1,20 @@
 import express from 'express'
-import { connect } from './config/Database'
+import { connect } from './config/Database.js'
+
 
 const PORT = process.env.PORT || 3000
 
-const app = express()
+const api = express()
 
-app.use(express.json())
+api.use(express.json())
 
-// Aquí van las rutas
+// rutas
 
-// Nos conectamos a la base de datos y luego levantamos el servidor
+
+
 
 connect().then(() => {
-
-    app.listen(PORT, () => {
-        console.log(`API running on http://localhost:${PORT} 🚀`)
-      })
+  api.listen(PORT, () => {
+    console.log(`API running on http://localhost:${PORT}🧭🧭`)
+  })
 })
-  
